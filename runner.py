@@ -2,7 +2,7 @@
 # Unless you are adding something to the bot class, e.g. a list, please refer to the README.md file.
 
 from discord.ext import commands
-import json
+import yaml
 import configparser
 
 # Define config
@@ -10,8 +10,8 @@ config = configparser.ConfigParser()
 config.read('secrets.cfg')
 
 # Load the cogs JSON file, and load it, defining a variable named cogs.
-with open('cogs.json', 'r') as cog_file:
-    cogs = json.load(cog_file)
+with open('cogs.yaml', 'r') as cog_file:
+    cogs = yaml.load(cog_file, Loader = yaml.FullLoader)
 
 
 # The basic Bot class.
