@@ -1,9 +1,0 @@
-[
-  {
-    "Cogname": "Examplecog",
-    "Author": "FunnyLimericks",
-    "Description": "An example cog to show how everything works!",
-    "path-to-cog": "cogs.pre.examplecog",
-    "discord_id": "701494621162963044"
-  }
-]
