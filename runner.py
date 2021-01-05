@@ -10,8 +10,8 @@ config = configparser.ConfigParser()
 config.read('secrets.cfg')
 
 # Load the cogs JSON file, and load it, defining a variable named cogs.
-with open('cogs.json', 'r') as cog_file:
-    cogs = json.load(cog_file)
+with open('cogs.yaml', 'r') as cog_file:
+    cogs = yaml.load(cog_file, Loader = yaml.FullLoader)
 
 
 # The basic Bot class.
@@ -37,7 +37,7 @@ class BotClass(commands.Bot):
     # Simply load the cogs list we defined earlier, by iterating through it, then loading the path through the code.
     def load_cogs(self):
         for cog in cogs:
-            self.load_extension(cog['path-to-cog']) # path-to-cog is defined in cogs.json, for each cog! Remember to add the correct path to it.
+            self.load_extension(cog['path-to-cog']) # path-to-cog is defined in cogs.yaml, for each cog! Remember to add the correct path to it.
 
     def starter(self): # Starting the bot.
         self.before_starter()
